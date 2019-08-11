@@ -4,12 +4,14 @@
       <div class="container">
         <div class="columns">
           <div class="column is-2">
-            <figure class="image is-3by1">
+            <nuxt-link to="/" tag="figure" class="image is-3by1">
               <img
                 src="https://www.palaceskateboards.com/wp-content/themes/palaceskateboards/css/images/text-logo.svg"
                 alt="Palace logo"
+                width="107.5"
+                height="25"
               />
-            </figure>
+            </nuxt-link>
           </div>
         </div>
       </div>

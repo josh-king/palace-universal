@@ -1,85 +1,46 @@
 <template>
-  <div class="columns is-multiline">
-    <div
-      v-for="store in stores"
-      :key="`store-${store.location}`"
-      class="column is-6"
-    >
-      <nuxt-link
-        :to="`shops/${store.location}`"
-        tag="figure"
-        class="image is-5by3"
-      >
-        <img :src="store.images[0]" alt="" srcset="" />
-      </nuxt-link>
+  <div class="columns is-centered">
+    <div class="column is-9">
+      <div class="columns is-multiline">
+        <div
+          v-for="shop in shops"
+          :key="`shop-${shop.location}`"
+          class="column is-6"
+        >
+          <nuxt-link
+            :to="`shops/${shop.location}`"
+            tag="figure"
+            class="image is-5by3"
+          >
+            <img :src="shop.images[0]" alt="" srcset="" />
+          </nuxt-link>
+          <h3 class="title has-text-centered is-uppercase is-6">
+            {{ shop.name }} shop
+          </h3>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import shops from '@/assets/data/shops'
+
 export default {
   layout: 'palace-default',
   data: () => ({
-    stores: [
-      {
-        name: 'London',
-        location: 'london-shop',
-        images: [
-          'https://images.palaceskateboards.com/wp-content/uploads/2018/02/Brewer-St-2018-000-600x400.jpg',
-          ''
-        ],
-        details: [
-          '26 Brewer Street',
-          'London w1f 0sw',
-          '020 7287 5048',
-          'Mon-Sat: 11-7  Sunday: 12-6'
-        ]
-      },
-      {
-        name: 'New York',
-        location: 'new-york-shop',
-        images: [
-          'https://images.palaceskateboards.com/wp-content/uploads/2017/04/PALACE_STORE24061-600x400.jpg',
-          ''
-        ],
-        details: [
-          '26 Brewer Street',
-          'London w1f 0sw',
-          '020 7287 5048',
-          'Mon-Sat: 11-7  Sunday: 12-6'
-        ]
-      },
-      {
-        name: 'Tokyo',
-        location: 'tokyo-shop',
-        images: [
-          'https://images.palaceskateboards.com/wp-content/uploads/2018/11/002_MGM8922-HDR-600x400.jpg',
-          ''
-        ],
-        details: [
-          '26 Brewer Street',
-          'London w1f 0sw',
-          '020 7287 5048',
-          'Mon-Sat: 11-7  Sunday: 12-6'
-        ]
-      },
-      {
-        name: 'Los Angeles',
-        location: 'los-angeles-shop',
-        images: [
-          'https://images.palaceskateboards.com/wp-content/uploads/2019/04/DSC_0954-600x400.jpg',
-          ''
-        ],
-        details: [
-          '26 Brewer Street',
-          'London w1f 0sw',
-          '020 7287 5048',
-          'Mon-Sat: 11-7  Sunday: 12-6'
-        ]
-      }
-    ]
+    shops
   })
 }
 </script>
 
-<style></style>
+<style scoped>
+.image {
+  transition: opacity 0.1s ease-in-out;
+}
+
+.image:hover {
+  opacity: 0.2;
+  cursor: pointer;
+}
+</style>
