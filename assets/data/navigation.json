@@ -1,18 +1,22 @@
 [
   {
     "name": "shops",
-    "location": "shops"
+    "location": "shops",
+    "colour": "#cd1417"
   },
   {
     "name": "web shop",
-    "location": "shop"
+    "location": "shop",
+    "colour": "#e6e6e6"
   },
   {
     "name": "autumn 2019 range",
-    "location": "range"
+    "location": "range",
+    "colour": "#34398d"
   },
   {
     "name": "advice",
-    "location": "advice"
+    "location": "advice",
+    "colour": "#000000"
   }
 ]
